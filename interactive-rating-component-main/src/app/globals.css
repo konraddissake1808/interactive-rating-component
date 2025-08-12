@@ -3,11 +3,21 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Dark-Blue: hsl(213, 19%, 18%); 
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-white: var(--White);
+  --color-light-grey: var(--Light Grey);
+  --color-dark-blue: var(--Dark Blue);
+  --color-very-dark-blue: var(--Very Dark Blue);
+  --color-orange: var(--Orange);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -20,7 +30,7 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--Very-Dark-Blue);
+  color: var(--White);
   font-family: Arial, Helvetica, sans-serif;
 }

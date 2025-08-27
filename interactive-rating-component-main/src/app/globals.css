@@ -7,6 +7,7 @@
   --White: hsl(0, 0%, 100%);
   --Light-Grey: hsl(217, 12%, 63%);
   --Dark-Blue: hsl(213, 19%, 18%); 
+  --Darker-Blue: hsl(214, 21%, 15%);
   --Very-Dark-Blue: hsl(216, 12%, 8%);
 }
 
@@ -14,12 +15,14 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-white: var(--White);
-  --color-light-grey: var(--Light Grey);
-  --color-dark-blue: var(--Dark Blue);
-  --color-very-dark-blue: var(--Very Dark Blue);
+  --color-light-grey: var(--Light-Grey);
+  --color-dark-blue: var(--Dark-Blue);
+  --color-very-dark-blue: var(--Very-Dark-Blue);
   --color-orange: var(--Orange);
+  --color-darker-blue: var(--Darker-Blue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-overpass: var(--font-overpass);
 }
 
 @media (prefers-color-scheme: dark) {

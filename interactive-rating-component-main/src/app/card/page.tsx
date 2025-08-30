@@ -1,23 +1,31 @@
 import React from 'react'
 import Image from 'next/image'
+import Button from '@/components/Button'
+import RatingComponent from '@/components/RatingComponent'
 
 function Page() {
   return (
-    <div className='flex items-center justify-center h-96 w-full bg-dark-blue text-[var(--White)]'>
+    <div className='flex items-center justify-center h-96 w-full bg-darker-blue text-[var(--White)]'>
         <div className='w-[90%]'>
-            <div>
-                <Image src="/icon-star.svg" alt="star" width={40} height={40} className='bg-darker-blue rounded-full p-2' />
+            <div className='w-10 h-10 mb-6 flex justify-center items-center bg-dark-blue rounded-full'>
+                <Image src="/icon-star.svg" alt="star" width={30} height={30} className='bg-dark-blue rounded-full p-2' />
             </div>
             <div>
-                <div>
+                <div className='mb-4'>
                     <p className='font-overpass text-2xl'>How did we do?</p>
                 </div>
-                <div>
+                <div className='mb-6'>
                     <p className='font-overpass text-sm text-light-grey'>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
                 </div>
             </div>
-            <div></div>
-            <div></div>
+            <form action="">
+                <div className='mb-6'>
+                    <RatingComponent />
+                </div>
+                <div>
+                    <Button />
+                </div>
+            </form> 
         </div>
     </div>
   )

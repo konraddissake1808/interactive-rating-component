@@ -18,7 +18,7 @@ function Page() {
                     <p className='font-overpass text-sm text-light-grey'>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
                 </div>
             </div>
-            <form action="">
+            <form>
                 <div className='mb-6'>
                     <RatingComponent />
                 </div>

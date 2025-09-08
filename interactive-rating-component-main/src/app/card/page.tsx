@@ -8,28 +8,7 @@ function Page() {
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        /*const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
-        if (selectedRating) {
-            try {
-                const response = await fetch('/api/ratings', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ rating: Number(selectedRating) }),
-                });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                // Redirect to thank you page
-                window.location.href = '/thankYou';
-            } catch (error) {
-                console.error('Error submitting rating:', error);
-            }  
-        }*/
        const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
-       //const [number, setNumber] = React.useState<number | null>(null);
-
        if (selectedRating) {
             try {
                 const response = await fetch('/api/ratings', {

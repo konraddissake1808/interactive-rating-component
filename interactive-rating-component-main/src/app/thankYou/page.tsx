@@ -15,7 +15,7 @@ import { devNull } from 'os';
 
 
 function ThankYou() {
-    const [rating, setRating] = useState(null)
+    const [rating, setRating] = useState()
     const [error, setError] = useState<null | string>(null);
     //const ratingValue = GetRating();
     useEffect(() => {
@@ -44,7 +44,7 @@ function ThankYou() {
 
     //const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
     
-    console.log('Selected Rating in ThankYou Page:',rating);
+    //console.log('Selected Rating in ThankYou Page:',rating);
     
 
   return (

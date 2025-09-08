@@ -1,9 +1,34 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import Button from '@/components/Button'
 import RatingComponent from '@/components/RatingComponent'
 
 function Page() {
+
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+        const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
+        if (selectedRating) {
+            try {
+                const response = await fetch('/api/ratings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ rating: Number(selectedRating) }),
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                // Redirect to thank you page
+                window.location.href = '/thankYou';
+            } catch (error) {
+                console.error('Error submitting rating:', error);
+            }  
+        }
+    }
+
   return (
     <div className='flex items-center justify-center h-96 w-full bg-darker-blue text-[var(--White)]'>
         <div className='w-[90%]'>
@@ -18,7 +43,7 @@ function Page() {
                     <p className='font-overpass text-sm text-light-grey'>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
                 </div>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='mb-6'>
                     <RatingComponent />
                 </div>

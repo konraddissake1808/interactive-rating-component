@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-//const dataFilePath = path.join(process.cwd(), '/interactive-rating-component-main/data', 'data.json');
+const dataFilePath = path.join(process.cwd(), '/interactive-rating-component-main/data', 'data.json');
 
 export function getData() {
   try {

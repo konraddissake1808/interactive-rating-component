@@ -1,51 +1,28 @@
 'use client'
 import React, { Suspense , useEffect, useState } from 'react'
 import Image from 'next/image'
-import { devNull } from 'os';
-//import { useSearchParams } from 'next/navigation';
-
-/*export const GetRating = () => {
-    const searchParams = useSearchParams();
-    const selectedRating = searchParams.get('rating');
-    return selectedRating
-    const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
-    return selectedRating
-}*/
-
-
 
 function ThankYou() {
     const [rating, setRating] = useState()
     const [error, setError] = useState<null | string>(null);
-    //const ratingValue = GetRating();
+
     useEffect(() => {
-       /*const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
-       if(selectedRating) {
-        setRating(selectedRating);
-       }*/
-      async function fetchRating() {
+
+      async function fetchLatestRating() {
         try {
-          const response = await fetch('../api/ratings', { method: 'GET' });
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          const data = await response.json();
-          setRating(data && data.length > 0 ? data[data.length - 1] : null); // Assuming the latest rating is the last one in the array
+          const response = await fetch('/api/ratings', { method: 'GET' });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setRating(data && data.length > 0 ? data[data.length - 1].number : null); // Assuming the latest rating is the last one in the array
         } catch (error) {
-          console.error('Error fetching rating from URL:', error);
+          console.error('Error fetching latest rating:', error);
           setError(error instanceof Error ? error.message : String(error));
         }
-      }
-      fetchRating();
+    }
+    fetchLatestRating();
     }, []);
-
-    
-
-
-    //const selectedRating = (document.querySelector('input[name="rating"]:checked') as HTMLInputElement)?.value;
-    
-    //console.log('Selected Rating in ThankYou Page:',rating);
-    
 
   return (
     <Suspense fallback={<div>Loading...</div>}>

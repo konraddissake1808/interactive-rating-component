@@ -30,6 +30,7 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
+- [MongoDB Atlas](https://www.mongodb.com/) - NoSQL database provider
 
 ## Author
 
